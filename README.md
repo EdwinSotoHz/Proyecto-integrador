@@ -2,3 +2,5 @@
 
 # Integrantes
 
+## Edwin Salvador Soto Hernández
+[Edwin Página Personal](https://edwinsotohz.github.io/)
