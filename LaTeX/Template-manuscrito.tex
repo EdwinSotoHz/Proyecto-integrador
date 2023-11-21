@@ -15,6 +15,13 @@
 \jname{ITICs letters}
 \jtitle{Proyectos Integradores}
 \pubyear{2023}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{listings}
 
 \newtheorem{theorem}{Theorem}
 \newtheorem{lemma}{Lemma}
@@ -24,6 +31,50 @@
 \setcounter{secnumdepth}{0}
 
 \begin{document}
+
+%imprimir código
+\lstnewenvironment{javaCode}[1][]
+{\lstset{
+    language=Java,
+    basicstyle=\scriptsize\ttfamily,
+    numbers=none, % Modificado: quitar los números de línea
+    keywordstyle=\color{blue},
+    commentstyle=\color{gray},
+    stringstyle=\color{purple},
+    breaklines=true,
+    breakatwhitespace=true,
+    tabsize=4,
+    showspaces=false,
+    showstringspaces=false,
+    frame=single,
+    captionpos=b,
+    floatplacement=!h,
+    #1
+}}
+{}
+
+
+%imprimir código
+\lstnewenvironment{javaCode}[1][]
+{\lstset{
+    language=Java,
+    basicstyle=\scriptsize\ttfamily,
+    numbers=none, % Modificado: quitar los números de línea
+    keywordstyle=\color{blue},
+    commentstyle=\color{gray},
+    stringstyle=\color{purple},
+    breaklines=true,
+    breakatwhitespace=true,
+    tabsize=4,
+    showspaces=false,
+    showstringspaces=false,
+    frame=single,
+    captionpos=b,
+    floatplacement=!h,
+    #1
+}}
+{}
+
 
 \sptitle{Proyecto Integrador de Primer Semestre}
 
@@ -74,7 +125,121 @@ Contenido del primer problema...
 
 
 \section{Sección Problema 2}
-Contenido del segundo problema...
+
+\section{Introducción}
+Este proyecto aborda el problema de resolver ecuaciones cuadráticas, identificando si sus raíces son reales o complejas. La resolución de ecuaciones cuadráticas es una tarea fundamental en álgebra y tiene aplicaciones en diversos campos, desde física hasta ingeniería.
+
+\section{Descripción del problema}
+Se debe determinar si las raíces de una ecuación cuadrática son reales o complejas. Si son reales, se calculan y se proporcionan los valores. Si son complejas, se indica que la solución está en el conjunto de los números complejos.
+
+
+\section{Definición de la solución}
+Para determinar la naturaleza de las raíces de una ecuación cuadrática de la forma  (\(ax^2 + bx + c = 0\)), se evalua el discriminante. Si es negativo, las raíces son complejas. De lo contrario, se calculan utilizando la fórmula cuadrática estándar:
+
+\[ x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} \]
+
+Donde:
+\begin{itemize}
+    \item \(a\), \(b\), y \(c\) son los coeficientes de la ecuación cuadrática.
+    \item El valor del discriminante determina si las raíces son reales o complejas y proporciona información sobre la cantidad de raíces distintas.
+\end{itemize}
+
+
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width = 6 cm]{imagen/prob2.jpg}
+    \caption{Gráfica de la ecuación de la solución de raíces}
+    \label{fig:GraficaEcuacionRecta}
+\end{figure}
+
+\section{Diseño de la solucion}
+
+Para el diseño de la solucion
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width = 6 cm]{imagen/a.jpeg}
+    \caption{Gráfica de la ecuación de la solución de raíces}
+    \label{fig:GraficaEcuacionRecta}
+\end{figure}
+
+
+\section{Desarrollo del código}
+La implementación del código solicita al usuario los coeficientes \(a\), \(b\), y \(c\), calcula el discriminante y aplica la lógica mencionada para determinar la naturaleza de las raíces. 
+\begin{javaCode}
+ Scanner in= new Scanner(System.in);
+        //Solicitar los datos para la formula general.
+        
+        System.out.println("""
+                           "Ingresa los puntos a, b, c.
+                           Separadas por una coma(a, b, c): 
+                           """);
+        String [] datos=in.nextLine().split(",");
+        //cerrar el escaneo
+        in.close();
+        
+\end{javaCode}
+
+Posteriormente se convierten los valores de los puntos A, B, C. en valores enteros para ser utilizados  en la formula general .
+
+\begin{javaCode}
+    //Asigna Valores de a, b, c en enteros.
+        int a= Integer.parseInt(datos[0].trim());
+        int b= Integer.parseInt(datos[1].trim());
+        int c= Integer.parseInt(datos[2].trim());
+        
+\end{javaCode}
+Una vez normalizados los datos, se calcula la discriminante.
+\begin{javaCode}
+    //Calcula la discriminante
+    double discriminante=(Math.pow(b, 2)-(4*(a*c)));
+\end{javaCode}
+
+Ya que tenemos el resultado de la discriminante, dependiendo de este se realizara la operación justa, o se dirá que la discriminante esta dentro de los números complejos.\\
+Si la discriminante es mayor que cero se realiza la siguiente operación y se imprimen en pantalla los 2 posibles resultados.:
+\begin{javaCode}
+    if (discriminante>0) {
+            double x1=(-b+Math.sqrt(discriminante))/(2*a);
+            
+            double x2=(-b-Math.sqrt(discriminante))/(2*a);
+            System.out.println("La raiz x1 es igual a " + x1);
+            System.out.println("La raiz x1 es igual a " + x2);
+            
+        }
+\end{javaCode}
+En caso de que la discriminante sea igual a cero se realiza el siguiente calculo y se imprime el resultado en pantalla.:
+\begin{javaCode}
+    else if(discriminante==0){
+            double x=(-b/(2*a));
+            System.out.println("La raiz es igual a " + x);
+        }
+\end{javaCode}
+Por ultimo, si la discriminante es menor a cero solo se imprimira en pantalla:\\"Esta dentro de los numeros complejos"
+\begin{javaCode}
+    else{
+            System.out.println("Esta dentro de los numeros complejos");
+        }
+\end{javaCode}
+
+\section{Pruebas}
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{\(a\)} & \textbf{\(b\)} & \textbf{\(c\)} & \textbf{\(Resultado\)} \\
+\hline
+1 & -3 & 2 & Raíces reales: \(x_1 = 2, x_2 = 1\) \\
+\hline
+1 & 2 & 1 & Raíz real única: \(x = -1\) \\
+\hline
+1 & -2 & 5 & Raíces complejas \\
+\hline
+\end{tabular}
+\end{center}
+
+\section{Conclusión}
+En resumen, el programa aborda la resolución de ecuaciones cuadráticas, clasificando las raíces entre reales y complejas mediante la evaluación del discriminante, destacando la utilidad de la fórmula cuadrática en este contexto.
+
 \newpage
 Contenido del segundo problema...
 \newpage
