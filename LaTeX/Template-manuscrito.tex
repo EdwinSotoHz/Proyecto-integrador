@@ -661,10 +661,111 @@ Resultado: \(3421\) en binario es \( 110101100101.\).
 
 
 \section{Sección Problema 5}
-Contenido del quinto problema...
-\newpage 
-Contenido del quinto problema...
-\newpage 
+\section{DESCRIPCIÓN DEL PROBLEMA}
+El reporte analiza el concepto de ingresar un número de tipo binario con $n$ bits, para posteriormente regresar su equivalente en decimal.
+
+\section{DEFINICIÓN DE SOLUCIÓN}
+Se planteó el generar un programa el cual sea capaz de realizar dicha premisa
+
+\section{DISEÑO DE LA SOLUCIÓN}
+\begin{enumerate}
+    \item Solicitar al usuario que ingrese el número binario de n bits.
+    \item Validar que el número binario ingresado sea válido, es decir, que esté compuesto únicamente de 0's y 1's y tenga una longitud de n bits.
+    \item Calcular el número decimal equivalente utilizando el método binAdecimal.
+    \item Mostrar el resultado al usuario.
+\end{enumerate}
+
+\section{DESARROLLO DE LA SOLUCIÓN}
+El algoritmo de solución del problema comienza solicitando al usuario teclee el número binario a convertir, para posteriormente almacenarlo en la variable $nbinario$:.
+\begin{lstlisting}[style=javaStyle]
+
+Scanner bin = new Scanner(System.in);
+    System.out.println("Ingresa el numero binario: ");
+    String nbinario = bin.nextLine();
+    bin.close();
+        
+\end{lstlisting}
+
+Por consiguiente, se declara la variable donde se va a alacena1r el dato y el mensaje a imprimir en pantalla de la operación de conversión.
+
+\begin{lstlisting}[style=javaStyle]
+
+int num = binAdecimal(nbinario);
+System.out.println("El numero decimal equivalente es: " + num);
+
+\end{lstlisting}
+
+Como el procedimiento de conversión se realizó dentro de una clase privada, se creo una de estas para posteriormente hacer el procedimiento, aquí se declara la clase y se definen las variables con el tipo de dato que estas van a llegar a ser.
+
+\begin{lstlisting}[style=javaStyle]
+
+public static int binAdecimal(String binario){
+    int n = binario.length();
+    int decimal = 0;
+    }
+
+\end{lstlisting}
+
+Luego de haber definido todas nuestras variables, viene el procedimiento de resolución del programa, Para convertir un número binario a decimal, podemos utilizar un bucle "$for$". Primero, inicializamos una variable 'decimal' en 0. Luego, recorremos cada dígito del número binario utilizando la variable $i$ como contador.
+
+\begin{lstlisting}[style=javaStyle]
+
+    for (int i = 0; i < n; i++) {
+    }
+\end{lstlisting}
+
+En cada iteración del bucle, extraemos el dígito binario correspondiente utilizando la función "$Character.getNumericValue(binario.charAt(i))$". Este paso convierte el carácter binario en un entero.
+
+\begin{lstlisting}[style=javaStyle]
+    int bit=Character.getNumericValue
+        (binario.charAt(i));
+\end{lstlisting}
+
+Luego, multiplicamos este dígito por 2 elevado a la potencia correspondiente. Utilizamos la fórmula "$bit * Math.pow(2, n - 1 - i)$" para realizar esta multiplicación, donde "$bit$" es el dígito binario, $n$ es el tamaño del número binario y "$i$" es el contador del bucle.
+
+\begin{lstlisting}[style=javaStyle]
+decimal += bit * Math.pow(2, n - 1 - i);
+\end{lstlisting}
+
+Finalmente, sumamos el resultado de cada multiplicación a la variable $decimal$.
+Al finalizar el bucle, la variable $decimal$ contendrá el valor decimal equivalente al número binario original.
+
+El código queda de la siguiente manera:\\
+\begin{lstlisting}[style=javaStyle]
+for (int i = 0; i < n; i++) {
+    int bit = Character.getNumericValue
+    (binario.charAt(i));
+    decimal += bit * Math.pow
+    (2, n - 1 - i);
+    }
+\end{lstlisting}
+
+\section{DEPURACION Y PRUEBAS}
+ 
+ \begin{table}[h]
+     \centering
+     \caption{Tabla de Corridas}\\
+     
+     \begin{tabular}{|c|c|c|}
+     \hline
+        Corrida & Binario & Decimal\\
+        \hline
+        1  & 010111 & 23\\
+        \hline
+        2  & 011011 & 27\\
+        \hline
+        3  & 101010 & 42\\
+        \hline
+        4  & 010101 & 21\\
+        \hline
+        5  & 111011 & 59\\
+        \hline
+     \end{tabular}
+     \label{tab:my_label}
+ \end{table}
+
+\section{CONCLUSION}
+El algoritmo de solución del problema se elaboro con el fin de convertir un número binario ingresado por el usuario a su equivalente decimal. El algoritmo utiliza un bucle "for" para recorrer cada dígito del número binario. En cada iteración, se extrae el dígito binario y se multiplica por 2 elevado a la potencia correspondiente. El resultado de cada multiplicación se suma a una variable decimal. Al finalizar el bucle, la variable decimal contiene el valor decimal equivalente al número binario original. El código muestra el número decimal resultante en la pantalla.
 
 
 
