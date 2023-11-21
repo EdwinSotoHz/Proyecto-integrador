@@ -338,9 +338,267 @@ Contenido del tercer problema...
 
 
 \section{Sección Problema 4}
-Contenido del cuarto problema...
+\subsection{Descripción del problema}
+Dado un numero decimal entero positivo o negativo regresar su equivalente en binario.
+\newline
+
+\subsection{Definición de solución}
+
+El sistema de numeración decimal es un sistema posicional que utiliza la base diez para representar cantidades. En este sistema, se emplean diez dígitos distintos:
+\newline
+
+[ 0, 1 , 2, 3, 4, 5, 6, 7, 8, 9, 0 ] 
+\newline
+
+
+Mientras que el sistema binario, a diferencia del sistema decimal, se caracteriza por ser un sistema de numeración que utiliza solo dos dígitos, 0 y 1; Para representar información. Es la base fundamental de la computación digital y la electrónica digital, ya que los dispositivos electrónicos, como las computadoras, utilizan señales eléctricas que pueden estar en dos estados: encendido (representado por 1) o apagado (representado por 0).
+\newline
+
+Los términos "bit" (dígito binario) y "byte" (conjunto de 8 bits) son comunes en el contexto del sistema binario. La representación binaria es fundamental para entender cómo la información se almacena, procesa y transmite en sistemas digitales, incluyendo todas las computadoras y dispositivos electrónicos modernos.
+\newline 
+
+La conversión de un número decimal a binario se basa en el método de sucesivas divisiones por 2, que es una técnica fundamental en el sistema binario. Este proceso es especialmente aplicable a números naturales positivos. La esencia de la conversión radica en dividir repetidamente el número decimal por 2 y registrar los residuos en orden inverso al que fueron obtenidos.
+
+\begin{figure} 
+    \centering
+    \includegraphics[width=0.6\linewidth]{conversion.jpg}
+    \caption{Representación de la conversión}
+    \label{fig: Conversion a Binario}
+\end{figure}
+
+Sin embargo, en el caso de números negativos, el proceso se complica y se introduce el concepto de complemento a 2, una técnica que implica obtener el complemento a 1 y sumar 1 al resultado para obtener la representación binaria del número negativo.La conversión a negativo tenemos 3 opciones 
+
+\begin{itemize}
+    \item Complemento a 1:
+\end{itemize}
+En el contexto del "complemento a 1" de un número binario, nos referimos a la secuencia de bits que se obtiene al invertir (cambiar de 0 a 1 y de 1 a 0) todos los bits del número original. Esta técnica es ampliamente utilizada en sistemas binarios para representar números negativos.
+\newline
+
+Por ejemplo, si tenemos el número binario 01010101, al aplicar el complemento a 1 obtendríamos 10101010, ya que hemos invertido cada bit. El complemento a 1 se utiliza principalmente para representar la magnitud negativa de un número binario y es una parte fundamental en el cálculo del complemento a 2."
+\newline
+
+\begin{itemize}
+    \item Complemento a 2:
+\end{itemize}
+El proceso de obtener el complemento a 2 de un número binario es un paso esencial en la representación de números negativos en sistemas binarios. Este método se basa en la utilización del complemento a 1 y la adición de 1 al resultado
+\newline
+
+
+\subsection{Desarrollo de la solución:}
+El algoritmo de solución para la conversión 
+Comienza solicitando al usuario un numero decimal entero ya sea este positivo o negativo .
+
+\begin{javaCode}
+    public static void main(String[] args) {
+         // Crear variable de escaneo de datos
+        Scanner decimal = new Scanner(System.in);
+
+        // Solicitud del número decimal
+        System.out.print("Ingrese el número decimal entero positivo o negativo: ");
+        long numeroDecimal = decimal.nextLong();
+\end{javaCode}
+
+Posteriormente se agrega en el método principal, la instrucción para imprimir el resultado de la conversión, en caso de ser negativo se imprimen dos casos de complemento 1 y complemento 2.
+
+
+\begin{javaCode}
+    // Impresión del número convertido y su complemento
+        System.out.println("El número convertido a binario es: " + decimalABinario(numeroDecimal));
+        if (numeroDecimal < 0) {
+            System.out.println("Complemento a 1: " + complementoAUno(numeroDecimal));
+            System.out.println("Complemento a 2: " + complementoADos(numeroDecimal));
+        }
+\end{javaCode}
+
+Después de obtener el número que se va a convertir, se procede a crear un método (decimalABinario) específico encargado de realizar la conversión a binario. Al ingresar a este método, el primer paso consiste en obtener el valor absoluto del número decimal.
+
+\begin{javaCode}
+  public static String decimalABinario(long decimal) {
+        String binario = "";
+        long numero = Math.abs(decimal); // Obtener el valor absoluto del número
+\end{javaCode}
+
+
+Ante posibles problemas se crean 2 casos,
+Si el número es 0, retorna "0" directamente, ya que su representación en binario es igual.
+
+\begin{javaCode}
+    //Caso 1 ser igual a 0
+    if (numero == 0) {
+        return "0";
+    }
+\end{javaCode}
+
+Si es diferente de 0, mediante un bucle, se procede a dividir de manera consecutiva el número decimal por 2, almacenando los residuos en la cadena binaria. Este proceso construye la representación binaria del número.
+
+Ya no es necesario invertir la cadena ya que el residuo se concatena a la izquierda de la cadena.
+
+\begin{javaCode}
+    //Si es diferente de 0 
+    while (numero != 0) {
+        int residuo = numero % 2;
+        //Concatenacion 
+        binario = residuo + binario ; 
+        numero = numero / 2;
+    }
+\end{javaCode}
+
+Finalmente, en el caso de que el número decimal sea negativo, para el primer caso de complemento a 1, 
+
+\begin{javaCode}
+      if (decimal < 0) {
+            // Complemento a 1
+            binario = complementoAUno(decimal);
+        }
+
+    return binario;
+\end{javaCode}
+
+Aquí se define un método llamado complementoAUno que toma un número largo (long) como parámetro y devuelve una representación en forma de cadena del complemento a uno de ese número, aqui solo se invierten los bits.
+
+\begin{javaCode}
+        public static String complementoAUno(long numero) {
+        StringBuilder complemento = new StringBuilder();
+        String binario = Integer.toBinaryString(Math.abs((int) numero));
+
+        // Invertir los bits
+        for (char bit : binario.toCharArray()) {
+            complemento.append(bit == '0' ? '1' : '0');
+        }
+
+        return "-" + complemento.toString();
+    }
+
+
+\end{javaCode}
+
+Así mismo se hace otro método llamado (complementoADos), se toma un número, calcula su complemento a dos y devuelve la representación binaria de ese complemento con el signo negativo.
+
+\begin{javaCode}
+ public static String complementoADos(long numero) {
+        int numeroPositivo = Math.abs((int) numero);
+        String binarioPositivo = Integer.toBinaryString(numeroPositivo);
+        StringBuilder bitsInvertidos = new StringBuilder();
+\end{javaCode}
+
+Se invierten los bits de una representación binaria almacenada en la cadena binarioPositivo. Utilizando un bucle for que itera sobre cada bit de la cadena. Dentro del bucle, la expresión bit == '0' ? '1' : '0' evalúa si el bit actual es '0'; en caso afirmativo, se agrega '1' al StringBuilder bitsInvertidos, de lo contrario, se agrega '0'. 
+
+\begin{javaCode}
+    // Invertir los bits
+        for (char bit : binarioPositivo.toCharArray()) {
+            bitsInvertidos.append(bit == '0' ? '1' : '0');
+        }
+\end{javaCode}
+
+Este ultimo codigo lo que representa es el complemento 2, el cual al ya tener los bits invertidos solo suma 1 al, con Integer.parseInt(..., 2) automaticamente lo que hace java es pasarlo a base 2, solo cambia el signo y da el resultado.
+
+\begin{javaCode}
+    // Agregar 1 al resultado para obtener la representación de complemento a 2
+        int resultado = Integer.parseInt(bitsInvertidos.toString(), 2) + 1;
+
+        return "-" + Integer.toBinaryString(resultado);
+    
+\end{javaCode}
+\subsection{Depuración}
+
+
+\subsection{Pruebas de escritorio}
+    Ejemplo 1: ( 9 8 5 2 ) \newline
+
+\newline \begin{tabular}{|c|c|c|c|}
+  \hline
+  Dividendo & Divisor & Cociente & Residuo \\
+  \hline
+  9852 & 2 & 4926 & 0 \\
+  4926 & 2 & 2463 & 0 \\
+  2463 & 2 & 1231 & 1 \\
+  1231 & 2 & 615 & 1 \\
+  615 & 2 & 307 & 1 \\
+  307 & 2 & 153 & 1 \\
+  153 & 2 & 76 & 1 \\
+  76 & 2 & 38 & 0 \\
+  38 & 2 & 19 & 0 \\
+  19 & 2 & 9 & 0 \\
+  9 & 2 & 4 & 1 \\
+  4 & 2 & 2 & 0 \\
+  2 & 2 & 1 & 0 \\
+  1 & 2 & 0 & 1 \\
+  \hline
+\end{tabular}
+\newline 
+
+Resultado: \(9852\) en binario es \( 10010001111100.\).
+\newline
+
+
+Ejemplo 2: ( 7 3 9) \newline  
+\newline \begin{tabular}{|c|c|c|c|}
+\hline
+Dividendo & Divisor & Cociente & Residuo \\
+\hline
+739 & 2 & 369 & 1 \\
+369 & 2 & 184 & 1 \\
+184 & 2 & 92 & 0 \\
+92 & 2 & 46 & 0 \\
+46 & 2 & 23 & 0 \\
+23 & 2 & 11 & 1 \\
+11 & 2 & 5 & 1 \\
+5 & 2 & 2 & 1 \\
+2 & 2 & 1 & 0 \\
+1 & 2 & 0 & 1 \\
+\hline
+\end{tabular}
+\newline
+
+Resultado: \(739\) en binario es \(1011100011.\).
+\newline
+
+Ejemplo 3: ( 3 7 4 )  \newline
+\newline \begin{tabular}{|c|c|c|c|}
+  \hline
+  Dividendo & Divisor & Cociente & Residuo \\
+  \hline
+  374 & 2 & 187 & 0 \\
+  187 & 2 & 93 & 1 \\
+  93 & 2 & 46 & 1 \\
+  46 & 2 & 23 & 0 \\
+  23 & 2 & 11 & 1 \\
+  11 & 2 & 5 & 1 \\
+  5 & 2 & 2 & 1 \\
+  2 & 2 & 1 & 0 \\
+  1 & 2 & 0 & 1 \\
+  \hline
+\end{tabular}
+\newline
+
+Resultado: \(374\) en binario es \(101110110\).
+\newline
+
+
+Ejemplo 4: ( 3 4 2 1 ) \newline 
+\newline \begin{tabular}{|c|c|c|c|}
+  \hline
+  Dividendo & Divisor & Cociente & Residuo \\
+  \hline
+  3421 & 2 & 1710 & 1 \\
+  1710 & 2 & 855 & 0 \\
+  855 & 2 & 427 & 1 \\
+  427 & 2 & 213 & 1 \\
+  213 & 2 & 106 & 1 \\
+  106 & 2 & 53 & 0 \\
+  53 & 2 & 26 & 1 \\
+  26 & 2 & 13 & 0 \\
+  13 & 2 & 6 & 1 \\
+  6 & 2 & 3 & 0 \\
+  3 & 2 & 1 & 1 \\
+  1 & 2 & 0 & 1 \\
+  \hline
+\end{tabular}
+\newline
+
+Resultado: \(3421\) en binario es \( 110101100101.\).
+\newline
 \newpage 
-Contenido del cuarto problema...
 \newpage 
 
 
