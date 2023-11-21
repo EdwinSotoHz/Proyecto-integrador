@@ -14,3 +14,5 @@
 ## Lizbeth de Jesús Bernal Franco
 [Lizbeth Página Personal](https://lizbernal.github.io/)
 
+## Karen Pérez Ortiz
+[Karen Página Personal](https://karenperezor.github.io/)
