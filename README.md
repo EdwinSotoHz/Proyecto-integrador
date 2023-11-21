@@ -7,3 +7,6 @@
 
 ## Dilan Emir Angeles Martínez
 [Dilan Página Personal](https://dangeles05.github.io/)
+
+## Lizbeth de Jesús Bernal Franco
+[Lizbeth Página Personal](https://lizbernal.github.io/)
