@@ -99,28 +99,28 @@ A continuación se describen los problemas que el equipo deberá resolver.
 
 
 
+
+
 % ⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️ PROBLEMA 1 ⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️
 \section{Sección Problema 1}
-\newpage
 Contenido del primer problema...
-\newpage
-Contenido del primer problema...
+\clearpage
+
+
 
 
 
 
 
 % ⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️ PROBLEMA 2 ⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️
-\section{Sección Problema 2}
-
-\section*{Introducción}
-Este proyecto aborda el problema de resolver ecuaciones cuadráticas, identificando si sus raíces son reales o complejas. La resolución de ecuaciones cuadráticas es una tarea fundamental en álgebra y tiene aplicaciones en diversos campos, desde física hasta ingeniería.
+\section{Sección Problema 2} \\
 
 \section*{Descripción del problema:}
 Se debe determinar si las raíces de una ecuación cuadrática son reales o complejas. Si son reales, se calculan y se proporcionan los valores. Si son complejas, se indica que la solución está en el conjunto de los números complejos.
 
 
 \section*{Definición de solución:}
+Este proyecto aborda el problema de resolver ecuaciones cuadráticas, identificando si sus raíces son reales o complejas. 
 Para determinar la naturaleza de las raíces de una ecuación cuadrática de la forma  (\(ax^2 + bx + c = 0\)), se evalua el discriminante. Si es negativo, las raíces son complejas. De lo contrario, se calculan utilizando la fórmula cuadrática estándar:
 
 \[ x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} \]
@@ -139,6 +139,8 @@ Donde:
     \caption{Gráfica de la ecuación de la solución de raíces}
     \label{fig:GraficaEcuacionRecta}
 \end{figure}
+
+\newpage
 
 \section*{Diseño de la solución:}
 
@@ -231,9 +233,11 @@ Por ultimo, si la discriminante es menor a cero solo se imprimira en pantalla:\\
 \end{tabular}
 \end{center}
 
-\section*{Conclusión}
-En resumen, el programa aborda la resolución de ecuaciones cuadráticas, clasificando las raíces entre reales y complejas mediante la evaluación del discriminante, destacando la utilidad de la fórmula cuadrática en este contexto.
-\newpage
+\clearpage
+
+
+
+
 
 
 
@@ -345,6 +349,10 @@ if (distancia > r) {
      \end{tabular}
      \label{tab:my_label}
  \end{table}
+\clearpage
+
+
+
 
 
 
@@ -607,7 +615,12 @@ Ejemplo 4: ( 3 4 2 1 ) \newline
 \newline
 
 Resultado: \(3421\) en binario es \( 110101100101.\).
-\newpage
+\clearpage
+
+
+
+
+
 
 
 
@@ -714,7 +727,12 @@ El código queda de la siguiente manera:
 
 \section*{Conclusión}
 El algoritmo de solución del problema se elaboro con el fin de convertir un número binario ingresado por el usuario a su equivalente decimal. El algoritmo utiliza un bucle "for" para recorrer cada dígito del número binario. En cada iteración, se extrae el dígito binario y se multiplica por 2 elevado a la potencia correspondiente. El resultado de cada multiplicación se suma a una variable decimal. Al finalizar el bucle, la variable decimal contiene el valor decimal equivalente al número binario original. El código muestra el número decimal resultante en la pantalla.
-\newpage
+\clearpage
+
+
+
+
+
 
 
 
@@ -733,68 +751,13 @@ La solución propuesta implica el desarrollo de un programa en Java que solicita
 \section*{Diseño de la solución:}
 
 El diseño se basa en tres funciones principales:
-\begin{itemize}
+\begin{enumerate}
     \item \texttt{llenarTabla:} Rellena la tabla de verdad utilizando las entradas dadas.
     \item \texttt{imprimirTabla:} Muestra la tabla de verdad en la consola con colores para facilitar la lectura.
     \item \texttt{generarExpresionBooleana:} Crea la expresión booleana a partir de las salidas que son 1 en la tabla de verdad.
-\end{itemize}
+\end{enumerate}
 
 \section*{Desarrollo de la solución:}
-
-\subsection*{4.1 Función \texttt{llenarTabla:}}
-
-Esta función calcula los valores binarios para las preposiciones de la tabla de verdad y asigna 1 o 0 según las combinaciones posibles. Luego, llena las salidas de la tabla.
-
-\subsection*{4.2 Función \texttt{imprimirTabla:}}
-
-Imprime la tabla de verdad en la consola con colores para resaltar las preposiciones y las salidas.
-
-\subsection*{4.3 Función \texttt{generarExpresionBooleana:}}
-
-Crea la expresión booleana a partir de las salidas que son 1 en la tabla de verdad, utilizando un enfoque de términos minterms y modificando las preposiciones según los valores de la tabla.
-
-\section*{Depuración y pruebas:}
-
-\begin{table}[h]
-\centering
-\begin{tabular}{|c|c|c|c|c|}
-\hline
-\textbf{Nº} & \textbf{A} & \textbf{B} & \textbf{C} & \textbf{Salida} \\
-\hline
-1 & 1 & 1 & 1 & 1 \\
-2 & 1 & 1 & 0 & 0 \\
-3 & 1 & 0 & 1 & 0 \\
-4 & 1 & 0 & 0 & 0 \\
-5 & 0 & 1 & 1 & 0 \\
-6 & 0 & 1 & 0 & 1 \\
-7 & 0 & 0 & 1 & 0 \\
-8 & 0 & 0 & 0 & 0 \\
-\hline
-\end{tabular}
-\caption{Tabla de pruebas}
-\end{table}
-Expresión booleana: $ABC + A'BC'$
-
-\begin{table}[h]
-\centering
-\begin{tabular}{|c|c|c|c|}
-\hline
-\textbf{Nº} & \textbf{A} & \textbf{B} & \textbf{Salida} \\
-\hline
-1 & 1 & 1 & 1 \\
-2 & 1 & 0 & 1 \\
-3 & 0 & 1 & 0 \\
-4 & 0 & 0 & 0 \\
-\hline
-\end{tabular}
-\caption{Tabla de pruebas}
-\end{table}
-Expresión booleana: $AB + AB'$
-
-
-\section*{Documentación:}
-
-\subsection{1.llenarTabla:}
 Esta función llena la tabla de verdad con valores binarios según las combinaciones posibles de bits y asigna 1 o 0 a las salidas correspondientes. También convierte las salidas ingresadas por el usuario a un arreglo de enteros.
 \begin{javaCode}
 public static int[][] llenarTabla(int[][] tablaDeVerdad, String[] salidas){
@@ -825,7 +788,6 @@ public static int[][] llenarTabla(int[][] tablaDeVerdad, String[] salidas){
 }
 \end{javaCode}
 
-\subsection{2.imprimirTabla:}
 Imprime la tabla de verdad en la consola con colores para resaltar las preposiciones y las salidas. Utiliza códigos de color ANSI para mejorar la legibilidad.
 \begin{javaCode}
 public static void imprimirTabla(int[][] tablaDeVerdad){
@@ -867,8 +829,7 @@ public static void imprimirTabla(int[][] tablaDeVerdad){
     }
 }
 \end{javaCode}
-
-\subsection{3.generarExpresionBooleana:}
+\newpage
 Genera la expresión booleana a partir de las salidas que son 1 en la tabla de verdad. Utiliza un enfoque de términos minterms y modifica las preposiciones según los valores de la tabla.
 \begin{javaCode}
 public static String generarExpresionBooleana(String[] salidas, int[][] tablaDeVerdad){
@@ -909,7 +870,6 @@ public static String generarExpresionBooleana(String[] salidas, int[][] tablaDeV
 }
 \end{javaCode}
 
-\subsection{4.main:}
 La función principal solicita la entrada del usuario, llama a las funciones anteriores y muestra la tabla de verdad y la expresión booleana resultante.
 \begin{javaCode}
 public static void main(String[] args) {
@@ -935,6 +895,46 @@ public static void main(String[] args) {
     System.out.println(expresion+"\n");
 }
 \end{javaCode}
+
+\section*{Depuración y pruebas:}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\textbf{Nº} & \textbf{A} & \textbf{B} & \textbf{C} & \textbf{Salida} \\
+\hline
+1 & 1 & 1 & 1 & 1 \\
+2 & 1 & 1 & 0 & 0 \\
+3 & 1 & 0 & 1 & 0 \\
+4 & 1 & 0 & 0 & 0 \\
+5 & 0 & 1 & 1 & 0 \\
+6 & 0 & 1 & 0 & 1 \\
+7 & 0 & 0 & 1 & 0 \\
+8 & 0 & 0 & 0 & 0 \\
+\hline
+\end{tabular}
+\caption{Tabla de pruebas}
+\end{table}
+Expresión booleana: $ABC + A'BC'$
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Nº} & \textbf{A} & \textbf{B} & \textbf{Salida} \\
+\hline
+1 & 1 & 1 & 1 \\
+2 & 1 & 0 & 1 \\
+3 & 0 & 1 & 0 \\
+4 & 0 & 0 & 0 \\
+\hline
+\end{tabular}
+\caption{Tabla de pruebas}
+\end{table}
+Expresión booleana: $AB + AB'$
+
+
 
 
 
