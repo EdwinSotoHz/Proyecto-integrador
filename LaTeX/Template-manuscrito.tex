@@ -629,8 +629,77 @@ Resultado: \(3421\) en binario es \( 110101100101.\).
 \section*{Descripción del problema:}
 El reporte analiza el concepto de ingresar un número de tipo binario con $n$ bits, para posteriormente regresar su equivalente en decimal.
 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width = 6 cm]{LaTeX/latex-imagenes/conversionbin.png}
+    \caption{Conversión de binario a su equivalente decimal}
+    \label{fig:GraficaEcuacionRecta}
+\end{figure}
+
 \section*{Definición de solución:}
-Se planteó el generar un programa el cual sea capaz de realizar dicha premisa
+
+Los números binarios se conforman con los símbolos 0 y 1, que se combinan para representar cualquier número. 
+Para representar números superiores a 1 dígito, se aplica un método semejante al de formación de números decimales, combinando ordenadamente los símbolos. Se repiten las combinaciones de dígitos anteriores y se le añade un dígito para continuar la numeración
+
+\begin{table}[h]
+     \centering
+     \caption{Valores binarios}
+     
+     \begin{tabular}{|c|c|}
+     \hline
+        Corrida & Binario \\
+        \hline
+        0  & 0 \\
+        \hline
+        1  & 1 \\
+        \hline
+        2  & 10 \\
+        \hline
+        3  & 11 \\
+        \hline
+        4  & 100 \\
+        \hline
+        5  & 101 \\
+        \hline
+        6  & 110 \\
+        \hline
+        7  & 111 \\
+        \hline
+        8  & 1000 \\
+        \hline
+        9  & 1001 \\
+        \hline
+        10  & 1010 \\
+        \hline
+        11  & 1011 \\
+        \hline
+        12  & 1100 \\
+        \hline
+     \end{tabular}
+     \label{tab:my_label}
+ \end{table}
+
+En el sistema binario se utiliza la ponderación por posición de dígito en la misma forma que en la numeración decimal, por ejemplo:
+
+\begin{table}[h]
+     \centering
+     \caption{Ponderaciones}
+     
+     \begin{tabular}{|c|c|c|c|c|}
+     \hline
+        Posición & 3 & 2 & 1 & 0 \\
+        \hline
+        ponderacion  & 2^{3} & 2^{2} & 2^{1} & 2^{0} \\
+        \hline
+        Peso en decimal  & 8 & 4 & 2 & 1 \\
+        \hline
+        Número en binario  & 0 & 1 & 0 & 1 \\
+        \hline
+     \end{tabular}
+     \label{tab:my_label}
+ \end{table}
+
+El resultado da la operación se obtiene de hacer la operación “res=0*8+1*4+0*2+1*1”
 
 \section*{Diseño de la solución:}
 \begin{enumerate}
