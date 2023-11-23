@@ -121,7 +121,7 @@ Se debe determinar si las raíces de una ecuación cuadrática son reales o comp
 
 \section*{Definición de solución:}
 Este proyecto aborda el problema de resolver ecuaciones cuadráticas, identificando si sus raíces son reales o complejas. 
-Para determinar la naturaleza de las raíces de una ecuación cuadrática de la forma  (\(ax^2 + bx + c = 0\)), se evalua el discriminante. Si es negativo, las raíces son complejas. De lo contrario, se calculan utilizando la fórmula cuadrática estándar:
+Para determinar la naturaleza de las raíces de una ecuación cuadrática de la forma  (\(ax^2 + bx + c = 0\)), se evalúa el discriminante. Si es negativo, las raíces son complejas. De lo contrario, se calculan utilizando la fórmula cuadrática estándar:
 
 \[ x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} \]
 
@@ -132,33 +132,29 @@ Donde:
 \end{itemize}
 
 
-
 \begin{figure}[h!]
     \centering
-    \includegraphics[width = 6 cm]{imagen/prob2.jpg}
-    \caption{Gráfica de la ecuación de la solución de raíces}
-    \label{fig:GraficaEcuacionRecta}
+    \includegraphics[width=0.6\linewidth]{latex-imagenes/graficaP1.png}
+    \caption{Representación de la conversión}
+    \label{fig: Grafica Ecuacion Recta}
 \end{figure}
-
-\newpage
-
 \section*{Diseño de la solución:}
 
-Para el diseño de la solucion se seguiran los siguientes pasos:
+Para el diseño de la solución se seguirán los siguientes pasos:
 \begin{itemize}
     \item Calcular la pendiente de la recta.
-    \item Calcular la ordenada en el origen de la recta.
+    \item Calcular la coordenada en el origen de la recta.
     \item Determinar el ángulo interno
     \item Devolver la ecuación de la recta y el ángulo
 \end{itemize}
 
-Tal y como se muestraen el siguientediagrama de flujo.
+Tal y como se muestra en el siguiente diagrama de flujo.
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width = 6 cm]{imagen/a.jpeg}
-    \caption{Gráfica de la ecuación de la solución de raíces}
-    \label{fig:GraficaEcuacionRecta}
+    \includegraphics[width = 6 cm]{latex-imagenes/a.jpeg}
+    \caption{Diagrama de flujo del problema1}
+    \label{fig:Diagramadeflujodel problema1}
 \end{figure}
 
 \section*{Desarrollo de la solución:}
@@ -176,7 +172,6 @@ La implementación del código solicita al usuario los coeficientes \(a\), \(b\)
         in.close();
         
 \end{javaCode}
-\newpage
 Posteriormente se convierten los valores de los puntos A, B, C. en valores enteros para ser utilizados  en la formula general .
 
 \begin{javaCode}
@@ -234,6 +229,9 @@ Por ultimo, si la discriminante es menor a cero solo se imprimira en pantalla:\\
 \end{center}
 
 \clearpage
+
+
+
 
 
 
