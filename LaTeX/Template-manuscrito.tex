@@ -54,28 +54,6 @@
 {}
 
 
-%imprimir código
-\lstnewenvironment{javaCode}[1][]
-{\lstset{
-    language=Java,
-    basicstyle=\scriptsize\ttfamily,
-    numbers=none, % Modificado: quitar los números de línea
-    keywordstyle=\color{blue},
-    commentstyle=\color{gray},
-    stringstyle=\color{purple},
-    breaklines=true,
-    breakatwhitespace=true,
-    tabsize=4,
-    showspaces=false,
-    showstringspaces=false,
-    frame=single,
-    captionpos=b,
-    floatplacement=!h,
-    #1
-}}
-{}
-
-
 \sptitle{Proyecto Integrador de Primer Semestre}
 
 \title{Software de resolución de problemas de Ingeniería }
@@ -117,10 +95,14 @@ A continuación se describen los problemas que el equipo deberá resolver.
 \item Dada una tabla de verdad de $n$ bits generar la expresión booleana que genere de manera fidedigna las salidas de esta tabla.
 \end{enumerate}
 
+
+
+
+
+% ⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️ PROBLEMA 1 ⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️
 \section{Sección Problema 1}
-
-
-
+\newpage
+Contenido del primer problema...
 \newpage
 Contenido del primer problema...
 
@@ -128,128 +110,17 @@ Contenido del primer problema...
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\newpage
-
-
+% ⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️ PROBLEMA 2 ⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️
 \section{Sección Problema 2}
 
-\section{Introducción}
+\section*{Introducción}
 Este proyecto aborda el problema de resolver ecuaciones cuadráticas, identificando si sus raíces son reales o complejas. La resolución de ecuaciones cuadráticas es una tarea fundamental en álgebra y tiene aplicaciones en diversos campos, desde física hasta ingeniería.
 
-\section{Descripción del problema}
+\section*{Descripción del problema:}
 Se debe determinar si las raíces de una ecuación cuadrática son reales o complejas. Si son reales, se calculan y se proporcionan los valores. Si son complejas, se indica que la solución está en el conjunto de los números complejos.
 
 
-\section{Definición de la solución}
+\section*{Definición de solución:}
 Para determinar la naturaleza de las raíces de una ecuación cuadrática de la forma  (\(ax^2 + bx + c = 0\)), se evalua el discriminante. Si es negativo, las raíces son complejas. De lo contrario, se calculan utilizando la fórmula cuadrática estándar:
 
 \[ x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} \]
@@ -269,14 +140,14 @@ Donde:
     \label{fig:GraficaEcuacionRecta}
 \end{figure}
 
-\section{Diseño de la solucion}
+\section*{Diseño de la solución:}
 
 Para el diseño de la solucion se seguiran los siguientes pasos:
 \begin{itemize}
     \item Calcular la pendiente de la recta.
     \item Calcular la ordenada en el origen de la recta.
-    \item Determinar el ángulo interno \alpha
-    \item Devolver la ecuación de la recta y el angulo \alpha
+    \item Determinar el ángulo interno
+    \item Devolver la ecuación de la recta y el ángulo
 \end{itemize}
 
 Tal y como se muestraen el siguientediagrama de flujo.
@@ -288,8 +159,7 @@ Tal y como se muestraen el siguientediagrama de flujo.
     \label{fig:GraficaEcuacionRecta}
 \end{figure}
 
-
-\section{Desarrollo del código}
+\section*{Desarrollo de la solución:}
 La implementación del código solicita al usuario los coeficientes \(a\), \(b\), y \(c\), calcula el discriminante y aplica la lógica mencionada para determinar la naturaleza de las raíces. 
 \begin{javaCode}
  Scanner in= new Scanner(System.in);
@@ -304,7 +174,7 @@ La implementación del código solicita al usuario los coeficientes \(a\), \(b\)
         in.close();
         
 \end{javaCode}
-
+\newpage
 Posteriormente se convierten los valores de los puntos A, B, C. en valores enteros para ser utilizados  en la formula general .
 
 \begin{javaCode}
@@ -346,7 +216,7 @@ Por ultimo, si la discriminante es menor a cero solo se imprimira en pantalla:\\
         }
 \end{javaCode}
 
-\section{Pruebas}
+\section*{Depuración y pruebas:}
 \begin{center}
 \begin{tabular}{|c|c|c|c|}
 \hline
@@ -361,98 +231,25 @@ Por ultimo, si la discriminante es menor a cero solo se imprimira en pantalla:\\
 \end{tabular}
 \end{center}
 
-\section{Conclusión}
+\section*{Conclusión}
 En resumen, el programa aborda la resolución de ecuaciones cuadráticas, clasificando las raíces entre reales y complejas mediante la evaluación del discriminante, destacando la utilidad de la fórmula cuadrática en este contexto.
-
-\newpage
-Contenido del segundo problema...
 \newpage
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+% ⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️ PROBLEMA 3 ⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️
 \section{Sección Problema 3}
 %Lizbeth
 
-\begin{itemize}
-    \item Descripción del problema:
-\end{itemize}
+\section*{Descripción del problema:}
 \begin{enumerate}
 El problema 3 busca evaluar si un punto $T$ con coordenadas $(x_{2}, y_{2})$ esta dentro del área de la circunferencia, sabiendo que el punto $C$ se encuentra en el centro de la misma. Lo cual solo el usuario ingresara las coordenadas $(x_{1}, y_{1})$ y $(x_{2}, y_{2})$  y el radio $r$ para realizar el proceso de la  ecuación que se ocupo, y presentar la respuesta.
 \end{enumerate}
 
 
-\begin{itemize}
-    \item Definición de solución:
-\end{itemize} 
+\section*{Definición de solución:}
 La solución para evaluar si un punto $T$ con coordenadas $(x_{2}, y_{2})$ está dentro del área de una circunferencia con centro en el punto $C$ con coordenadas $(x_{1}, y_{1})$ y radio $r$ implica utilizar la fórmula de la distancia euclidiana, la distancia se calcula como la raíz cuadrada de la suma de los cuadrados de las diferencias entre las coordenadas x y las coordenadas y de ambos puntos:
 distancia = 
 \begin{equation}
@@ -469,9 +266,7 @@ Al final solo comparamos la distancia calculada con el radio $r$ de la circunfer
 \end{enumerate}
 
 
-\begin{itemize}
-    \item Diseño de la solución:
-\end{itemize}
+\section*{Diseño de la solución:}
 \begin{enumerate} 
 \item Solicitar al usuario que ingrese las coordenadas del punto $C$ y el punto $T$, es decir $(x_{1}, y_{1})$ y $(x_{2}, y_{2})$ y el radio $r$.
 \item Calcular la distancia entre el centro y el punto.
@@ -480,11 +275,9 @@ Al final solo comparamos la distancia calculada con el radio $r$ de la circunfer
 \end{enumerate}
 
 
-\begin{itemize}
-    \item Desarrollo de solución:
-\end{itemize}
+\section*{Desarrollo de la solución:}
 El algoritmo de solución del problema 3 comienza utilizando un objeto Scanner para leer las coordenadas del centro (punto $C$), el radio $r$ y las coordenadas del punto a verificar (punto $T$) desde la entrada estándar. Las coordenadas se ingresan en el formato $"x, y"$ separadas por una coma.
-\begin{lstlisting}[style=javaStyle]
+\begin{javaCode}
 Scanner datC = new Scanner(System.in);
         System.out.print("""
                          Ingrese las coordenadas del punto C 
@@ -502,24 +295,24 @@ Scanner datC = new Scanner(System.in);
                          """);
     String[] puntoT = (datC.nextLine()).split(",");
     datC.close();
-\end{lstlisting}
+\end{javaCode}
 Posteriormente se convierten los valores de los puntos $(x_{1}, y_{1})$ y $(x_{2}, y_{2})$. en valores enteros para ser utilizados  en la ecuación de la distancia:
 
-\begin{lstlisting}[style=javaStyle]
+\begin{javacode}
     int x1 = Integer.parseInt(puntoC[0].trim());
     int y1 = Integer.parseInt(puntoC[1].trim());
         
     int x2 = Integer.parseInt(puntoT[0].trim());
     int y2 = Integer.parseInt(puntoT[1].trim()); 
-\end{lstlisting}
+\end{javacode}
 Después el valor de las coordenadas del punto $C$ y del punto $T$ se convierten a números enteros y se calcula la distancia entre ellos utilizando la fórmula de la distancia euclidiana.
-\begin{lstlisting}[style=javaStyle]
+\begin{javacode}
 float distancia = (float)Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2)); 
-\end{lstlisting}
+\end{javacode}
 
 Al final se verifica la ubicación del punto, se comparan la distancia calculada con el radio $r$ de la circunferencia para determinar la ubicación del punto $T$. 
 Dependiendo de la comparación, se imprime un mensaje indicando si el punto está dentro de la circunferencia, en el borde o fuera de ella.
-\begin{lstlisting}[style=javaStyle]
+\begin{javacode}
 if (distancia > r) {
      System.out.println("El punto T("+x2+","+y2+") esta fuera de la circunferencia");
      }else if (distancia == r) {
@@ -527,12 +320,10 @@ if (distancia > r) {
     }else{
      System.out.println("El punto T("+x2+","+y2+") esta dentro de la circunferencia");
     }
-\end{lstlisting}
+\end{javacode}
 
 
-\begin{itemize}
-    \item Depuración y pruebas: 
-\end{itemize}
+\section*{Depuración y pruebas:}
 \begin{table}[h!]
      \centering
      \caption{Tabla de Corridas del problema 3}\\
@@ -556,83 +347,16 @@ if (distancia > r) {
  \end{table}
 
 
-\newpage 
-Contenido del tercer problema...
-\newpage 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+% ⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️ PROBLEMA 4 ⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️
 \section{Sección Problema 4}
-\subsection{Descripción del problema}
+\section*{Descripción del problema:}
 Dado un numero decimal entero positivo o negativo regresar su equivalente en binario.
 \newline
 
-\subsection{Definición de solución}
+\section*{Definición de solución:}
 
 El sistema de numeración decimal es un sistema posicional que utiliza la base diez para representar cantidades. En este sistema, se emplean diez dígitos distintos:
 \newline
@@ -658,23 +382,19 @@ La conversión de un número decimal a binario se basa en el método de sucesiva
 
 Sin embargo, en el caso de números negativos, el proceso se complica y se introduce el concepto de complemento a 2, una técnica que implica obtener el complemento a 1 y sumar 1 al resultado para obtener la representación binaria del número negativo.La conversión a negativo tenemos 3 opciones 
 
-\begin{itemize}
-    \item Complemento a 1:
-\end{itemize}
+\subsection{Complemento a 1:}
 En el contexto del "complemento a 1" de un número binario, nos referimos a la secuencia de bits que se obtiene al invertir (cambiar de 0 a 1 y de 1 a 0) todos los bits del número original. Esta técnica es ampliamente utilizada en sistemas binarios para representar números negativos.
 \newline
 
 Por ejemplo, si tenemos el número binario 01010101, al aplicar el complemento a 1 obtendríamos 10101010, ya que hemos invertido cada bit. El complemento a 1 se utiliza principalmente para representar la magnitud negativa de un número binario y es una parte fundamental en el cálculo del complemento a 2."
 \newline
 
-\begin{itemize}
-    \item Complemento a 2:
-\end{itemize}
+\subsection{Complemento a 2:}
 El proceso de obtener el complemento a 2 de un número binario es un paso esencial en la representación de números negativos en sistemas binarios. Este método se basa en la utilización del complemento a 1 y la adición de 1 al resultado
 \newline
 
 
-\subsection{Desarrollo de la solución:}
+\section*{Desarrollo de la solución:}
 El algoritmo de solución para la conversión 
 Comienza solicitando al usuario un numero decimal entero ya sea este positivo o negativo .
 
@@ -887,77 +607,21 @@ Ejemplo 4: ( 3 4 2 1 ) \newline
 \newline
 
 Resultado: \(3421\) en binario es \( 110101100101.\).
-\newline
-\newpage 
-\newpage 
+\newpage
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+% ⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️ PROBLEMA 5 ⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️
 \section{Sección Problema 5}
-\section{DESCRIPCIÓN DEL PROBLEMA}
+\section*{Descripción del problema:}
 El reporte analiza el concepto de ingresar un número de tipo binario con $n$ bits, para posteriormente regresar su equivalente en decimal.
 
-\section{DEFINICIÓN DE SOLUCIÓN}
+\section*{Definición de solución:}
 Se planteó el generar un programa el cual sea capaz de realizar dicha premisa
 
-\section{DISEÑO DE LA SOLUCIÓN}
+\section*{Diseño de la solución:}
 \begin{enumerate}
     \item Solicitar al usuario que ingrese el número binario de n bits.
     \item Validar que el número binario ingresado sea válido, es decir, que esté compuesto únicamente de 0's y 1's y tenga una longitud de n bits.
@@ -965,76 +629,70 @@ Se planteó el generar un programa el cual sea capaz de realizar dicha premisa
     \item Mostrar el resultado al usuario.
 \end{enumerate}
 
-\section{DESARROLLO DE LA SOLUCIÓN}
+\section*{Desarrollo de la solución:}
 El algoritmo de solución del problema comienza solicitando al usuario teclee el número binario a convertir, para posteriormente almacenarlo en la variable $nbinario$:.
-\begin{lstlisting}[style=javaStyle]
-
+\begin{javaCode}
 Scanner bin = new Scanner(System.in);
     System.out.println("Ingresa el numero binario: ");
     String nbinario = bin.nextLine();
     bin.close();
-        
-\end{lstlisting}
+\end{javaCode}
 
 Por consiguiente, se declara la variable donde se va a alacena1r el dato y el mensaje a imprimir en pantalla de la operación de conversión.
 
-\begin{lstlisting}[style=javaStyle]
-
+\begin{javaCode}
 int num = binAdecimal(nbinario);
 System.out.println("El numero decimal equivalente es: " + num);
 
-\end{lstlisting}
+\end{javaCode}
 
 Como el procedimiento de conversión se realizó dentro de una clase privada, se creo una de estas para posteriormente hacer el procedimiento, aquí se declara la clase y se definen las variables con el tipo de dato que estas van a llegar a ser.
 
-\begin{lstlisting}[style=javaStyle]
-
+\begin{javaCode}
 public static int binAdecimal(String binario){
     int n = binario.length();
     int decimal = 0;
     }
-
-\end{lstlisting}
+\end{javaCode}
 
 Luego de haber definido todas nuestras variables, viene el procedimiento de resolución del programa, Para convertir un número binario a decimal, podemos utilizar un bucle "$for$". Primero, inicializamos una variable 'decimal' en 0. Luego, recorremos cada dígito del número binario utilizando la variable $i$ como contador.
 
-\begin{lstlisting}[style=javaStyle]
-
+\begin{javaCode}
     for (int i = 0; i < n; i++) {
     }
-\end{lstlisting}
+\end{javaCode}
 
 En cada iteración del bucle, extraemos el dígito binario correspondiente utilizando la función "$Character.getNumericValue(binario.charAt(i))$". Este paso convierte el carácter binario en un entero.
 
-\begin{lstlisting}[style=javaStyle]
+\begin{javaCode}
     int bit=Character.getNumericValue
         (binario.charAt(i));
-\end{lstlisting}
+\end{javaCode}
 
 Luego, multiplicamos este dígito por 2 elevado a la potencia correspondiente. Utilizamos la fórmula "$bit * Math.pow(2, n - 1 - i)$" para realizar esta multiplicación, donde "$bit$" es el dígito binario, $n$ es el tamaño del número binario y "$i$" es el contador del bucle.
 
-\begin{lstlisting}[style=javaStyle]
+\begin{javaCode}
 decimal += bit * Math.pow(2, n - 1 - i);
-\end{lstlisting}
+\end{javaCode}
 
 Finalmente, sumamos el resultado de cada multiplicación a la variable $decimal$.
 Al finalizar el bucle, la variable $decimal$ contendrá el valor decimal equivalente al número binario original.
 
-El código queda de la siguiente manera:\\
-\begin{lstlisting}[style=javaStyle]
-for (int i = 0; i < n; i++) {
+El código queda de la siguiente manera:
+\begin{javaCode}
+    for (int i = 0; i < n; i++) {
     int bit = Character.getNumericValue
     (binario.charAt(i));
     decimal += bit * Math.pow
     (2, n - 1 - i);
     }
-\end{lstlisting}
+\end{javaCode}
 
-\section{DEPURACION Y PRUEBAS}
+\section*{Depuración y pruebas:}
  
  \begin{table}[h]
      \centering
-     \caption{Tabla de Corridas}\\
+     \caption{Tabla de Corridas}
      
      \begin{tabular}{|c|c|c|}
      \hline
@@ -1054,90 +712,230 @@ for (int i = 0; i < n; i++) {
      \label{tab:my_label}
  \end{table}
 
-\section{CONCLUSION}
+\section*{Conclusión}
 El algoritmo de solución del problema se elaboro con el fin de convertir un número binario ingresado por el usuario a su equivalente decimal. El algoritmo utiliza un bucle "for" para recorrer cada dígito del número binario. En cada iteración, se extrae el dígito binario y se multiplica por 2 elevado a la potencia correspondiente. El resultado de cada multiplicación se suma a una variable decimal. Al finalizar el bucle, la variable decimal contiene el valor decimal equivalente al número binario original. El código muestra el número decimal resultante en la pantalla.
+\newpage
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+% ⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️ PROBLEMA 6 ⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️
 \section{Sección Problema 6}
-Contenido del sexto problema...
-\newpage 
-Contenido del sexto problema...
-\newpage 
+\section*{Descripción del problema:}
+
+El problema consiste en generar una expresión booleana a partir de una tabla de verdad de \(n\) bits. La tabla de verdad contiene las salidas correspondientes a todas las combinaciones posibles de valores de entrada. El objetivo es obtener una expresión booleana que represente de manera fidedigna las salidas de la tabla.
+
+\section*{Definición de solución:}
+
+La solución propuesta implica el desarrollo de un programa en Java que solicita al usuario la cantidad de bits y las salidas que son 1, genera la tabla de verdad correspondiente y deriva la expresión booleana. La solución se estructura utilizando funciones modulares para facilitar la comprensión y el mantenimiento del código.
+
+\section*{Diseño de la solución:}
+
+El diseño se basa en tres funciones principales:
+\begin{itemize}
+    \item \texttt{llenarTabla:} Rellena la tabla de verdad utilizando las entradas dadas.
+    \item \texttt{imprimirTabla:} Muestra la tabla de verdad en la consola con colores para facilitar la lectura.
+    \item \texttt{generarExpresionBooleana:} Crea la expresión booleana a partir de las salidas que son 1 en la tabla de verdad.
+\end{itemize}
+
+\section*{Desarrollo de la solución:}
+
+\subsection*{4.1 Función \texttt{llenarTabla:}}
+
+Esta función calcula los valores binarios para las preposiciones de la tabla de verdad y asigna 1 o 0 según las combinaciones posibles. Luego, llena las salidas de la tabla.
+
+\subsection*{4.2 Función \texttt{imprimirTabla:}}
+
+Imprime la tabla de verdad en la consola con colores para resaltar las preposiciones y las salidas.
+
+\subsection*{4.3 Función \texttt{generarExpresionBooleana:}}
+
+Crea la expresión booleana a partir de las salidas que son 1 en la tabla de verdad, utilizando un enfoque de términos minterms y modificando las preposiciones según los valores de la tabla.
+
+\section*{Depuración y pruebas:}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\textbf{Nº} & \textbf{A} & \textbf{B} & \textbf{C} & \textbf{Salida} \\
+\hline
+1 & 1 & 1 & 1 & 1 \\
+2 & 1 & 1 & 0 & 0 \\
+3 & 1 & 0 & 1 & 0 \\
+4 & 1 & 0 & 0 & 0 \\
+5 & 0 & 1 & 1 & 0 \\
+6 & 0 & 1 & 0 & 1 \\
+7 & 0 & 0 & 1 & 0 \\
+8 & 0 & 0 & 0 & 0 \\
+\hline
+\end{tabular}
+\caption{Tabla de pruebas}
+\end{table}
+Expresión booleana: $ABC + A'BC'$
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Nº} & \textbf{A} & \textbf{B} & \textbf{Salida} \\
+\hline
+1 & 1 & 1 & 1 \\
+2 & 1 & 0 & 1 \\
+3 & 0 & 1 & 0 \\
+4 & 0 & 0 & 0 \\
+\hline
+\end{tabular}
+\caption{Tabla de pruebas}
+\end{table}
+Expresión booleana: $AB + AB'$
+
+
+\section*{Documentación:}
+
+\subsection{1.llenarTabla:}
+Esta función llena la tabla de verdad con valores binarios según las combinaciones posibles de bits y asigna 1 o 0 a las salidas correspondientes. También convierte las salidas ingresadas por el usuario a un arreglo de enteros.
+\begin{javaCode}
+public static int[][] llenarTabla(int[][] tablaDeVerdad, String[] salidas){
+    //Arreglo de tipo entero
+    int[] salidasEntero = new int[salidas.length];
+    for (int i = 0; i < salidasEntero.length; i++) {
+        salidasEntero[i] = Integer.parseInt(salidas[i])-1;
+    }
+    
+    int filas = tablaDeVerdad.length;
+    int columnas = tablaDeVerdad[1].length;
+    
+    for (int i = 0; i < filas; i++) {
+        //Llenar las preposiciones de la tabla de verdad
+        for (int j = 0; j < columnas-1; j++) {
+            int division = i / ((int) Math.pow(2, j));
+            int valorPosicion = division % 2;
+            tablaDeVerdad[i][(columnas-1)-1-j] = (valorPosicion == 0)   ?   1 : 0 ;
+        }
+        //LLenar las salidas de la tabla
+        if (Arrays.binarySearch(salidasEntero, i) > 0) {
+            tablaDeVerdad[i][columnas-1] = 1;
+        } else {
+            tablaDeVerdad[i][columnas-1] = 0;
+        }
+    }
+    return tablaDeVerdad;
+}
+\end{javaCode}
+
+\subsection{2.imprimirTabla:}
+Imprime la tabla de verdad en la consola con colores para resaltar las preposiciones y las salidas. Utiliza códigos de color ANSI para mejorar la legibilidad.
+\begin{javaCode}
+public static void imprimirTabla(int[][] tablaDeVerdad){
+    int filas = tablaDeVerdad.length;
+    int columnas = tablaDeVerdad[1].length;
+    
+    //Imprimir la tabla
+    String preposiciones= "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    String[] colores = {
+        "\u001B[31m", // rojo
+        "\u001B[34m", // azul
+        "\u001B[32m", // verde
+        "\u001B[35m", // morado
+        "\u001B[33m", // amarillo
+        "\u001B[36m", // cian
+    };
+    
+    System.out.println("\nLa tabla de verdad es:");
+    // Encabezados
+    System.out.print("     ");
+    for (int i = 0; i <= columnas-1; i++) {
+        if (i == columnas-1) {
+            System.out.print(colores[i] + "Salida");
+        }else{
+            System.out.print(colores[i] + preposiciones.charAt(i) + "  ");
+        }
+    }
+    System.out.println();
+    //Contenido de la tabla
+    for (int i = 0; i < filas; i++) {
+        if (i<9) {
+            System.out.print(" ");
+        }
+        System.out.print(i+1+"| ");
+        for (int j = 0; j <= columnas-1; j++) {
+            System.out.print(" " +colores[j] + tablaDeVerdad[i][j] + " ");
+        }
+        System.out.println();
+    }
+}
+\end{javaCode}
+
+\subsection{3.generarExpresionBooleana:}
+Genera la expresión booleana a partir de las salidas que son 1 en la tabla de verdad. Utiliza un enfoque de términos minterms y modifica las preposiciones según los valores de la tabla.
+\begin{javaCode}
+public static String generarExpresionBooleana(String[] salidas, int[][] tablaDeVerdad){
+    int filas = tablaDeVerdad.length;
+    int columnas = tablaDeVerdad[1].length;
+    String expresion = "";
+    String preposiciones= "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    //Obtener las salidas de valor 1
+    String[][] salidasUno = new String[salidas.length][filas-1];
+    int indice = 0;
+    for (int i = 0; i < filas; i++) {
+        if (tablaDeVerdad[i][columnas-1] == 1) {
+            for (int j = 0; j < columnas-1; j++) {
+                salidasUno[indice][j] = 
+                Integer.toString(tablaDeVerdad[i][j]);
+            }
+            indice++;
+        }
+    }
+    for (String[] salidasUno1 : salidasUno) {
+        for (int j = 0; j < columnas-1; j++) {
+            if ("0".equals(salidasUno1[j])) {
+                salidasUno1[j] = preposiciones.charAt(j) + "'";
+            } else {
+                salidasUno1[j] = preposiciones.charAt(j) + "";
+            }
+        }
+    }
+    for (int i = 0; i < salidasUno.length; i++) {
+        for (int j = 0; j < columnas-1; j++) {
+            expresion += salidasUno[i][j];
+        }
+        if (i != salidasUno.length-1) {
+            expresion += " + ";
+        }
+    }
+    return expresion;
+}
+\end{javaCode}
+
+\subsection{4.main:}
+La función principal solicita la entrada del usuario, llama a las funciones anteriores y muestra la tabla de verdad y la expresión booleana resultante.
+\begin{javaCode}
+public static void main(String[] args) {
+    Scanner entradaDatos = new Scanner(System.in);
+
+    System.out.print("Ingrese la cantidad de bits: ");
+    int numBits = entradaDatos.nextInt();
+    entradaDatos.nextLine();
+    int numSalidas = (int)Math.pow(2, numBits);
+    int[][] tabla = new int[numSalidas][numBits+1];
+
+    System.out.print("Ingrese las salidas que son 1 sepadados por comas ("+1+"-"+numSalidas+"): ");
+    String[] salidas = entradaDatos.nextLine().split(",");
+    entradaDatos.close();
+    
+    //Llenar tabla
+    tabla = llenarTabla(tabla, salidas);
+    
+    imprimirTabla(tabla);
+    
+    System.out.println("\nExpresión booleana: ");
+    String expresion = generarExpresionBooleana(salidas, tabla);
+    System.out.println(expresion+"\n");
+}
+\end{javaCode}
 
 
 
 \end{document}
-
